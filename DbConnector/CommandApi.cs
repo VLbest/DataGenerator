@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataGenerator;
 
 namespace DbConnector
 {
@@ -18,9 +19,7 @@ namespace DbConnector
         public LinkedList<CommandEntity> getAvailableCommands() {
             DataTable data = DbHolder.getCommands();
             LinkedList<CommandEntity> Commands;
-            foreach(DataRow Commands in data.Rows) {
-                                
-            }
+
 
 
             return null;
