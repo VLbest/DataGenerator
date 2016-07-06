@@ -16,6 +16,12 @@ namespace DbConnector {
 
         public LinkedList<Lot> getAvailableLots() {
             DataTable data = DbHolder.getLots();
+            LinkedList<Lot> Lots;
+            foreach(DataRow item in data) {
+                                
+            }
+
+
             return null;
         }
 
