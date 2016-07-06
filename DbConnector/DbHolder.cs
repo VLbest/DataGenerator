@@ -27,6 +27,11 @@ WHERE matieres_de_produit.ID_produit_fini = {0}
             return Products;
         }
 
+        public static DataTable getCommands() {
+            DataTable Commands = SqlSelect("SELECT * FROM Commande", dbProducts);
+            return Commands;
+        }
+
 
         private static DataTable SqlSelect(String connStr, String query){
             MySqlConnection conn = new MySqlConnection(dbProducts);
