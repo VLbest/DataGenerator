@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace DbConnector {
     public class ProductsApi {
 
-        public LinkedList<Lot> LotsList;
+        public LinkedList<LotEntity> LotsList;
 
         public ProductsApi() {
-            this.LotsList = new LinkedList<Lot>();
+            this.LotsList = new LinkedList<LotEntity>();
         }
 
-        public LinkedList<Lot> getAvailableLots() {
+        public LinkedList<LotEntity> getAvailableLots() {
             DataTable data = DbHolder.getLots();
             LinkedList<Lot> Lots;
             foreach(DataRow item in data) {
