@@ -17,6 +17,12 @@ namespace DbConnector
             return Lots;
         }
 
+        internal static DataTable getCommands()
+        {
+            DataTable Commands = SqlSelect("SELECT * FROM Commande", dbProducts);
+            return Commands;
+        }
+
 
         private static DataTable SqlSelect(String connStr, String query){
             MySqlConnection conn = new MySqlConnection(dbProducts);
