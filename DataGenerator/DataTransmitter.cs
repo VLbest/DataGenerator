@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Flurl;
-using Flurl.Http;
-
 namespace DataGenerator {
     class DataTransmitter {
 
         private DataAdapter DataAdapter;
         //private ProductsAPI ProductsApi;
-        private String someUrl = "http://www.example.com/recepticle.aspx";
+        
 
         public DataTransmitter() {
             this.DataAdapter = new DataAdapter();
@@ -21,9 +18,7 @@ namespace DataGenerator {
 
         public void sendToDataBase(String jsonData) {
 
-            var responseString = someUrl
-            .PostUrlEncodedAsync( new { commande = jsonData } )
-            .ReceiveString();
+            
         }
 
         internal List<Product> getAvailableRefs() {

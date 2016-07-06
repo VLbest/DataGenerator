@@ -9,20 +9,27 @@ namespace DataGenerator {
 
         private Random random;
 
-        public int MAX_COMMAND { get; set; } = 500;
+        public int MAX_COMMAND { get; set; }
 
         [Obsolete]
-        public int MAX_COMMAND_PER_DAY { get; set; } = 6;
+        public int MAX_COMMAND_PER_DAY { get; set; }
         [Obsolete]
-        public int MIN_COMMAND_PER_DAY { get; set; } = 2;
+        public int MIN_COMMAND_PER_DAY { get; set; }
 
-        public int MAX_LOTS_PER_COMMAND { get; set; } = 6;
-        public int MIN_LOTS_PER_COMMAND { get; set; } = 2;
-        public int MIN_PRODUCTS_BY_REF { get; set; } = 15;
-        public int MAX_PRODUCTS_BY_REF { get; set; } = 20;
+        public int MAX_LOTS_PER_COMMAND { get; set; }
+        public int MIN_LOTS_PER_COMMAND { get; set; }
+        public int MIN_PRODUCTS_BY_REF { get; set; }
+        public int MAX_PRODUCTS_BY_REF { get; set; }
 
 
         public GenConstrains() {
+            MAX_COMMAND = 500;
+            MAX_COMMAND_PER_DAY = 6;
+            MIN_COMMAND_PER_DAY = 2;
+            MAX_LOTS_PER_COMMAND = 6;
+            MIN_LOTS_PER_COMMAND = 2;
+            MIN_PRODUCTS_BY_REF = 15;
+            MAX_PRODUCTS_BY_REF = 20;
             this.random = new Random();
         }
 
