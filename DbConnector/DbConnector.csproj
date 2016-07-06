@@ -58,8 +58,8 @@
     <Compile Include="DataBases.cs" />
     <Compile Include="DbHolder.cs" />
     <Compile Include="LotEntity.cs" />
-    <Compile Include="LotsEntity.cs" />
     <Compile Include="ProductsApi.cs" />
+    <Compile Include="ProductsEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

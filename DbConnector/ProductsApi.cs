@@ -16,9 +16,14 @@ namespace DbConnector {
 
         public LinkedList<LotEntity> getAvailableLots() {
             DataTable data = DbHolder.getLots();
-            LinkedList<LotEntity> Lots;
-            IEnumerable<DataRow> collection = data.Rows.Cast<DataRow>();
+            List<LotEntity> Lots = new List<LotEntity>();
+            IEnumerable<DataRow> LotsCollection = data.Rows.Cast<DataRow>();
+            Lots = LotsCollection.Select(x => new LotEntity() {
+                ID = x.Field<int>("ID"),
+                Ref = x.Field<String>("Ref"),
+                Price = (float)x.Field<double>("Price"),
 
+            }).ToList();
 
             return null;
         }
