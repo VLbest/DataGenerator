@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DbConnector {
-    class LotsEntity {
+    public class ProductsEntity {
         public int Refs { get; set; }
         public float Price { get; set; }
     }
