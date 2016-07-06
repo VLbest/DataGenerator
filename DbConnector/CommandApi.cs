@@ -16,11 +16,8 @@ namespace DbConnector
             this.CommandList = new LinkedList<CommandEntity>();
         }
 
-        public LinkedList<CommandEntity> getAvailableCommands() {
-            DataTable data = DbHolder.getCommands();
-            LinkedList<CommandEntity> Commands;
-
-
+        public LinkedList<CommandEntity> GetAvailableCommands() {
+          
 
             return null;
         }
