@@ -17,7 +17,7 @@ namespace DbConnector {
         public LinkedList<LotEntity> getAvailableLots() {
             DataTable data = DbHolder.getLots();
             LinkedList<LotEntity> Lots;
-            foreach(DataRow item in data.Rows) {
+            foreach(DataRow Lots in data.Rows) {
                                 
             }
 
