@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DbConnector {
     public class ProductsEntity {
-        public int Refs { get; set; }
+        public int ID { get; set; }
+        public String Refs { get; set; }
         public float Price { get; set; }
     }
 }

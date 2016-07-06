@@ -22,10 +22,19 @@ namespace DbConnector {
                 ID = x.Field<int>("ID"),
                 Ref = x.Field<String>("Ref"),
                 Price = (float)x.Field<double>("Price"),
-
             }).ToList();
 
-            return null;
+            foreach(LotEntity lot in Lots) {
+                List<ProductsEntity> products = DbHolder.getProductsOfLot(lot).Rows.Cast<DataRow>().
+                    Select(x => new ProductsEntity() {
+                        ID = x.Field<int>("ID"),
+                        Refs = x.Field<String>("Ref"),
+                        Price = (float)x.Field<double>("Price"),
+                    }).ToList();
+                lot.Products = products;
+            }
+
+            return Lots;
         }
 
     }
