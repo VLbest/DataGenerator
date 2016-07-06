@@ -12,9 +12,19 @@ namespace DbConnector
 
         private static string dbProducts = "Server=10.133.50.5;Port=8020;Database=Products;Uid=odbc;Pwd=odbc;";
 
-        internal static DataTable getLots() {
+        public static DataTable getLots() {
             DataTable Lots = SqlSelect("SELECT * FROM produit_fini", dbProducts);
             return Lots;
+        }
+
+        public static DataTable getProductsOfLot(LotEntity Lot) {
+            string query = @"
+SELECT * FROM matieres_premieres LEFT JOIN matieres_de_produit on matieres_premieres.ID = matieres_de_produit.ID
+WHERE matieres_de_produit.ID_produit_fini = {0}
+";
+            query = string.Format(query, Lot.ID);
+            DataTable Products = SqlSelect(query, dbProducts);
+            return Products;
         }
 
 

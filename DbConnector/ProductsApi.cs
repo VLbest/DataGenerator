@@ -17,9 +17,7 @@ namespace DbConnector {
         public LinkedList<LotEntity> getAvailableLots() {
             DataTable data = DbHolder.getLots();
             LinkedList<LotEntity> Lots;
-            foreach(DataRow item in data.Rows) {
-                                
-            }
+            IEnumerable<DataRow> collection = data.Rows.Cast<DataRow>();
 
 
             return null;

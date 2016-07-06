@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace DbConnector {
     public class LotEntity {
 
+        public int ID { get; set; }
         public int Ref { get; set; }
         public int Count { get; set; }
         public float Price { get; set; }
