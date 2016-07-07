@@ -16,3 +16,6 @@ D:\BI_Proj\DataGenerator\DataGenerator\bin\Debug\DbConnector.dll
 D:\BI_Proj\DataGenerator\DataGenerator\bin\Debug\DbConnector.pdb
 D:\BI_Proj\DataGenerator\DataGenerator\bin\Debug\Newtonsoft.Json.dll
 D:\BI_Proj\DataGenerator\DataGenerator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\15824_000\Documents\GitHub\DataGenerator\DataGenerator\bin\Debug\DataGenerator.exe.config
+C:\Users\15824_000\Documents\GitHub\DataGenerator\DataGenerator\obj\Debug\DataGenerator.exe
+C:\Users\15824_000\Documents\GitHub\DataGenerator\DataGenerator\obj\Debug\DataGenerator.pdb
