@@ -1,0 +1,10 @@
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\DbConnector.dll.config
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\DbConnector.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\DbConnector.pdb
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\EntityFramework.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\EntityFramework.SqlServer.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\mysql.data.entity.EF6.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\EntityFramework.xml
+D:\BI_Proj\DataGenerator\DbConnector\bin\Release\EntityFramework.SqlServer.xml
+D:\BI_Proj\DataGenerator\DbConnector\obj\Release\DbConnector.dll
+D:\BI_Proj\DataGenerator\DbConnector\obj\Release\DbConnector.pdb

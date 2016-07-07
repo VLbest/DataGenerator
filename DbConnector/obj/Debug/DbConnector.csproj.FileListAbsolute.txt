@@ -1,0 +1,11 @@
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\DbConnector.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\DbConnector.pdb
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\EntityFramework.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\EntityFramework.SqlServer.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\mysql.data.entity.EF6.dll
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\EntityFramework.xml
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\EntityFramework.SqlServer.xml
+D:\BI_Proj\DataGenerator\DbConnector\obj\Debug\DbConnector.dll
+D:\BI_Proj\DataGenerator\DbConnector\obj\Debug\DbConnector.pdb
+D:\BI_Proj\DataGenerator\DbConnector\obj\Debug\DbConnector.csprojResolveAssemblyReference.cache
+D:\BI_Proj\DataGenerator\DbConnector\bin\Debug\DbConnector.dll.config
