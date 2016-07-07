@@ -61,6 +61,8 @@
     <Compile Include="Commandes\CommandEntity.cs" />
     <Compile Include="DataBases.cs" />
     <Compile Include="DbHolder.cs" />
+    <Compile Include="Fabrication\FabricationApi.cs" />
+    <Compile Include="Fabrication\FabricationEntity.cs" />
     <Compile Include="Products\LotEntity.cs" />
     <Compile Include="Products\ProductsApi.cs" />
     <Compile Include="Products\ProductsEntity.cs" />
@@ -71,6 +73,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
