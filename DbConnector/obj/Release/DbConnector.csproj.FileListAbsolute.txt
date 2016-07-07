@@ -8,3 +8,4 @@ D:\BI_Proj\DataGenerator\DbConnector\bin\Release\EntityFramework.xml
 D:\BI_Proj\DataGenerator\DbConnector\bin\Release\EntityFramework.SqlServer.xml
 D:\BI_Proj\DataGenerator\DbConnector\obj\Release\DbConnector.dll
 D:\BI_Proj\DataGenerator\DbConnector\obj\Release\DbConnector.pdb
+D:\BI_Proj\DataGenerator\DbConnector\obj\Release\DbConnector.csprojResolveAssemblyReference.cache

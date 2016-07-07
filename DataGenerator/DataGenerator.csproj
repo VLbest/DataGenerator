@@ -93,6 +93,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FabricationProcess.cs" />
     <Compile Include="GenAnalizer.cs" />
     <Compile Include="GenConstrains.cs" />
     <Compile Include="Pays.cs" />
