@@ -9,7 +9,7 @@ using DataGenerator;
 
 namespace DbConnector.Fabrication
 {
-    class FabricationApi
+    public class FabricationApi
     {
         public List<FabricationEntity> FabricationList;
         BackgroundWorker backgroundWorker;

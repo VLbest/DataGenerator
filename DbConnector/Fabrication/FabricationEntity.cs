@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DbConnector.Fabrication
 {
-    class FabricationEntity
+    public class FabricationEntity
     {
         public int idTravailFabrication { get; set; }
         public DateTime HeureDebut { get; set; }
