@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using DataGenerator;
+using DbConnector.Fabrication;
 
 namespace DbConnector
 {
@@ -42,6 +43,7 @@ WHERE matieres_de_produit.ID_produit_fini = {0}
             DataTable Commands = SqlSelect("SELECT * FROM Commande", dbProducts);
             return Commands;
         }
+        
 
         public static void insertNewCommande(CommandEntity command) {
             MySqlConnection conn = new MySqlConnection(dbExpeition);
@@ -68,6 +70,44 @@ VALUES ('{0}','{1}','{2}')
                 query = string.Format(query, lot.Nb, lotID, lastCommand);
                 SqlQuery(query, dbExpeition);
             }
+
+            conn.Close();
+        }
+
+        public static DataTable getFabrication()
+        {
+            DataTable Fabrication = SqlSelect("SELECT * FROM travail_fabrication", dbProducts);
+            return Fabrication;
+        }
+
+        public static void insertNewFabrication(FabricationEntity fabrication)
+        {
+            MySqlConnection conn = new MySqlConnection(dbExpeition);
+            conn.Open();
+
+            string query = @"
+INSERT INTO `travail_fabrication`(`heure_debut`, `heure_fin`, `temps`, 'Quantite_piece') 
+VALUES ('{0}','{1}','{2}','{3}','{4}')
+";
+            query = string.Format(query, fabrication.HeureDebut.Value.ToString("yyyy-MM-dd"),
+                fabrication.HeureFin.Value.ToString("yyyy-MM-dd"),
+                fabrication.Temps,
+                fabrication.QuantitePiece);
+            SqlQuery(query, dbExpeition);
+
+            //query = "SELECT MAX(id_commande) FROM commande";
+            //int lastCommand = SqlSelect(query, dbExpeition).Rows[0].Field<int>(0);
+
+            /*foreach (LotEntity lot in fabrication.ListLots)
+            {
+                query = "SELECT ID FROM produit_fini WHERE Ref = '{0}'";
+                query = string.Format(query, lot.Ref);
+                int lotID = SqlSelect(query, dbProducts).Rows[0].Field<int>(0);
+
+                query = @"INSERT INTO `contient`(`nombre`, `id_produit_fini`, `id_commande`) VALUES ('{0}','{1}','{2}')";
+                query = string.Format(query, lot.Nb, lotID, lastCommand);
+                SqlQuery(query, dbExpeition);
+            }*/
 
             conn.Close();
         }
