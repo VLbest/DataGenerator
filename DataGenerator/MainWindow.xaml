@@ -70,6 +70,11 @@
                         <DropShadowEffect Direction="260" ShadowDepth="2" BlurRadius="9" RenderingBias="Quality"/>
                     </Button.Effect>
                 </Button>
+                <Button x:Name="FabrBtn" Content="Fabrication" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Width="100" Height="25" Background="#FF607D8B" Foreground="White" FontFamily="Georgia" FontSize="16" BorderBrush="#FF607D8B" FontStyle="Italic" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="True" Click="FabrBtn_Click">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="260" ShadowDepth="2" BlurRadius="9" RenderingBias="Quality"/>
+                    </Button.Effect>
+                </Button>
             </Grid>
         </Grid>
         <Label x:Name="label" Content="PlasticBoX DataGen" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Height="47" Foreground="White" FontFamily="Segoe WP Semibold" FontSize="29.333" FontWeight="Bold"/>

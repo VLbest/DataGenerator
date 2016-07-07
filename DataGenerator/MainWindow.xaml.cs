@@ -136,5 +136,10 @@ namespace DataGenerator {
             CommandAPI.insertCommands(DataBuilder.Commandes);
         }
 
+        private void FabrBtn_Click(object sender, RoutedEventArgs e) {
+            FabricationProcess fabProc = new FabricationProcess();
+            fabProc.beginFabrication();
+        }
+
     }
 }

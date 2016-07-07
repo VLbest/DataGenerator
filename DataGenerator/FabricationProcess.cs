@@ -19,11 +19,11 @@ namespace DataGenerator {
         }
 
         public void beginFabrication(){
-
+            sli()
         }
 
         private void sliceData() {
-            
+            commands = commands.OrderBy(x => x.DateLivraison).ToList();
         }
 
     }
