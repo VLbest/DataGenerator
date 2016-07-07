@@ -44,13 +44,32 @@
                 <Label x:Name="label2" Content="❤  Max Commandes" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="298" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667"/>
                 <Slider x:Name="sliderMaxProdByComm" HorizontalAlignment="Left" Margin="44,123,0,0" VerticalAlignment="Top" Width="264" AutoToolTipPlacement="TopLeft" Minimum="1" Maximum="100"/>
                 <Label x:Name="label2_Copy" Content="❤  Max  Lots/Commande" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="298" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667"/>
-                <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="10" Margin="10,12,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF673AB7"/>
+                <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="10" Margin="10,12,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF673AB7" Background="#FFFDC461">
+                    <ProgressBar.BorderBrush>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFB2B2B2" Offset="0"/>
+                            <GradientStop Color="#FF8C8C8C" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ProgressBar.BorderBrush>
+                </ProgressBar>
                 <Label x:Name="label2_Copy1" Content="♥ Status : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="73" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
                 <Label x:Name="resp_status_lb" Content="" HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Width="101" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
                 <Label x:Name="Nb_Comm_lb" Content="♥ #Comm's : " HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="109" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
                 <Label x:Name="resp_nb_Comms_lb" Content="" HorizontalAlignment="Left" Margin="124,40,0,0" VerticalAlignment="Top" Width="65" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
-                <Label x:Name="Nb_Comm_lb_Copy" Content="♥ #Pieces : " HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="109" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
-                <Label x:Name="resp_nb_Pieces_lb" Content="" HorizontalAlignment="Left" Margin="124,75,0,0" VerticalAlignment="Top" Width="65" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
+                <Label x:Name="Nb_Comm_lb_Copy" Content="♥ #Lots : " HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="109" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
+                <Label x:Name="resp_nb_Lots_lb" Content="" HorizontalAlignment="Left" Margin="124,75,0,0" VerticalAlignment="Top" Width="65" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
+                <Label x:Name="Nb_Comm_lb_Copy1" Content="♥ #Pieces : " HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="109" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
+                <Label x:Name="resp_nb_Pieces_lb" Content="" HorizontalAlignment="Left" Margin="124,105,0,0" VerticalAlignment="Top" Width="65" Foreground="#FF212121" FontFamily="Segoe WP Semibold" FontSize="14.667" Grid.Column="1"/>
+                <Button x:Name="PreviewBtn" Content="Preview" HorizontalAlignment="Left" Margin="88,240,0,0" VerticalAlignment="Top" Width="101" Height="25" Background="#FF607D8B" Foreground="White" FontFamily="Georgia" FontSize="16" BorderBrush="#FF607D8B" FontStyle="Italic" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="True" Click="PreviewBtn_Click" Grid.Column="1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="260" ShadowDepth="2" BlurRadius="9" RenderingBias="Quality"/>
+                    </Button.Effect>
+                </Button>
+                <Button x:Name="InsertBtn" Content="Insert" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Width="73" Height="25" Background="#FF607D8B" Foreground="White" FontFamily="Georgia" FontSize="16" BorderBrush="#FF607D8B" FontStyle="Italic" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="True" Grid.Column="1" Click="InsertBtn_Click">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="260" ShadowDepth="2" BlurRadius="9" RenderingBias="Quality"/>
+                    </Button.Effect>
+                </Button>
             </Grid>
         </Grid>
         <Label x:Name="label" Content="PlasticBoX DataGen" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Height="47" Foreground="White" FontFamily="Segoe WP Semibold" FontSize="29.333" FontWeight="Bold"/>

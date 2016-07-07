@@ -9,8 +9,9 @@ namespace DbConnector {
 
         public int ID { get; set; }
         public String Ref { get; set; }
-        public float Count { get; set; }
+        public float Nb { get; set; }
         public float Price { get; set; }
+        public String Nom { get; set; }
         public List<ProductsEntity> Products { get; set; }
 
     }

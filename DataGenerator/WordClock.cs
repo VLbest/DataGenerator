@@ -15,8 +15,8 @@ namespace DataGenerator {
         }
 
         public void init() {
-            this.ActualTime = DateTime.Now.AddMonths(-1);
-            this.StartTime = DateTime.Now;
+            this.ActualTime = DateTime.ParseExact("04/07/2016", "dd/MM/yyyy", null).AddMonths(-1);
+            this.StartTime = DateTime.ParseExact("04/07/2016", "dd/MM/yyyy", null);
         }
 
         public bool PerformTimeTick() {

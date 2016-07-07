@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DbConnector;
 
 namespace DataGenerator {
     /// <summary>
@@ -23,21 +25,31 @@ namespace DataGenerator {
         private DataBuilder DataBuilder;
         private GenConstrains constrains;
         private GenAnalizer Analizer;
-        BackgroundWorker backgroundWorker = new BackgroundWorker();
+        BackgroundWorker gbGeneratorWorker = new BackgroundWorker();
+        BackgroundWorker gbInsertWorker = new BackgroundWorker();
+        private CommandsApi CommandAPI;
         public bool IsBusy { get; set; }
-
+        
         public MainWindow() {
             InitializeComponent();
+            
             IsBusy = false;
             this.progressBar.Visibility = Visibility.Hidden;
-            DataBuilder = new DataBuilder( backgroundWorker );
+            DataBuilder = new DataBuilder( gbGeneratorWorker );
             this.Analizer = new GenAnalizer();
             this.constrains = new GenConstrains();
-            backgroundWorker.WorkerReportsProgress = true;
-            backgroundWorker.WorkerSupportsCancellation = true;
-            backgroundWorker.ProgressChanged += BackgroundWorker_ProgressChanged;
-            backgroundWorker.DoWork += BackgroundWorker_DoWork;
-            backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
+            this.CommandAPI = new CommandsApi(gbInsertWorker);
+            gbGeneratorWorker.WorkerReportsProgress = true;
+            gbGeneratorWorker.WorkerSupportsCancellation = true;
+            gbGeneratorWorker.ProgressChanged += BackgroundWorker_ProgressChanged;
+            gbGeneratorWorker.DoWork += BackgroundWorker_DoWork;
+            gbGeneratorWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
+
+            gbInsertWorker.WorkerReportsProgress = true;
+            gbInsertWorker.WorkerSupportsCancellation = true;
+            gbInsertWorker.ProgressChanged += BackgroundWorker_ProgressChanged;
+            gbInsertWorker.DoWork += BackgroundWorker_DoWork;
+            gbInsertWorker.RunWorkerCompleted += BackgroundWorker_RunInsertWorkerCompleted;
         }
 
         
@@ -45,8 +57,8 @@ namespace DataGenerator {
         private async void GoBtn_Click(object sender, RoutedEventArgs e) {
             this.setUpConstrains();
             progressBar.Value = 0;
-            backgroundWorker.CancelAsync();
-            backgroundWorker.Dispose();
+            gbGeneratorWorker.CancelAsync();
+            gbGeneratorWorker.Dispose();
             DataBuilder.reinit();
             LoadingProcesTogle( true );
             DataBuilder.StartGeneration(constrains);
@@ -66,6 +78,9 @@ namespace DataGenerator {
             LoadingProcesTogle( false );
             ShowAnswer(DataBuilder.response);
         }
+        private void BackgroundWorker_RunInsertWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
+            LoadingProcesTogle(false);
+        }
 
         private void setUpConstrains() {
             int max_days = 120;
@@ -81,7 +96,7 @@ namespace DataGenerator {
 #endregion
             constrains.MAX_LOTS_PER_COMMAND = (int) sliderMaxProdByComm.Value;
             constrains.MIN_LOTS_PER_COMMAND = (int) sliderMaxProdByComm.Minimum;
-
+            constrains.init();
         }
 
         private void LoadingProcesTogle(bool state) {
@@ -100,9 +115,25 @@ namespace DataGenerator {
                 else {
                     this.resp_status_lb.Content = "Success";
                     this.resp_nb_Comms_lb.Content = Analizer.getNbOfCommands(DataBuilder.Commandes);
+                    this.resp_nb_Lots_lb.Content = Analizer.getNbPLots(DataBuilder.Commandes);
                     this.resp_nb_Pieces_lb.Content = Analizer.getNbPieces(DataBuilder.Commandes);
                 }
             } );
+            
+        }
+
+        private void PreviewBtn_Click(object sender, RoutedEventArgs e) {
+            DataAdapter DataAdapter = new DataGenerator.DataAdapter();
+            String json = DataAdapter.ToJson(DataBuilder.Commandes.Take(5).ToList());
+            MessageBoxResult result = MessageBox.Show(json, "Preview",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void InsertBtn_Click(object sender, RoutedEventArgs e) {
+            gbGeneratorWorker.CancelAsync();
+            gbGeneratorWorker.Dispose();
+            LoadingProcesTogle(true);
+            CommandAPI.insertCommands(DataBuilder.Commandes);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbConnector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,12 @@ namespace DataGenerator {
     class DataTransmitter {
 
         private DataAdapter DataAdapter;
-        //private ProductsAPI ProductsApi;
+        private ProductsApi ProductsApi;
         
 
         public DataTransmitter() {
             this.DataAdapter = new DataAdapter();
-            //this.ProductsApi = new ProductsAPI();
+            this.ProductsApi = new ProductsApi();
         }
 
         public void sendToDataBase(String jsonData) {
@@ -21,14 +22,8 @@ namespace DataGenerator {
             
         }
 
-        internal List<Product> getAvailableRefs() {
-
-            //var list = ProductsApi.getAllLots();
-            return null;
-            /*
-            var responseString = someUrl.GetStringAsync();
-            return DataAdapter.FromJson(responseString);
-            */
+        internal List<LotEntity> getAvailableRefs() {
+            return ProductsApi.getAvailableLots();
         }
     }
 }
